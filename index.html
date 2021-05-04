@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rastreio Correios</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.c-buscar {
+			padding: 32px;
+			display: flex;
+			justify-content: center;
+		}
+		.c-buscar > button {
+			margin-left: 16px;
+		}
+		.c-resultado {
+			padding: 32px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="c-buscar">	
+		<input type="text" class="js-input" value="QE752285449BR">
+		<button onclick="buscar()">Buscar</button>
+	</div>
+
+	<div class="c-resultado js-output">
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script>
+		function buscar() {
+			var input = document.querySelector('.js-input');
+			input = input.value;
+
+			var output = document.querySelector('.js-output');
+
+			if(input != '') {
+				axios.get("https://api.rastrearpedidos.com.br/api/rastreio/v1?codigo=" + input)
+				.then((response) => {
+					output.innerHTML = JSON.stringify(response.data);
+				})
+				.catch((error) => {
+				    console.log(error);
+				});
+			} else {
+				alert('Vazio')
+			}
+		}
+	</script>
+</body>
+</html>
