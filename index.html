@@ -2,14 +2,19 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Rastreio Correios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="API para rastrear pedidos do Correios utilizando JQuery">
+	<meta name="keywords" content="api, correios, rastrear, pedido, jquery">
+	<meta name="robots" content="index, follow">
+	<link rel="shortcut icon" href="img/favicon.png" />
 	<link rel="stylesheet" href="./css/app.css">
+	<title>API Rastrear Pedidos Correios com JQuery - Renan Morais</title>
 </head>
 <body>
 	<div>
 		<div class="c-buscar">	
-			<input type="text" class="js-input">
+			<input type="text" class="js-input" placeholder="Código de Rastreio">
 			<button onclick="buscar()">Buscar</button>
 		</div>
 	
@@ -17,7 +22,9 @@
 		</div>
 	</div>
 
-	<p class="c-copy">API Disponobilizada por <a href="https://rastrearpedidos.com.br/" target="_blank">https://rastrearpedidos.com.br/</a></p>
+	<footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 8px; background: #f1f1f1;">
+		<p style="margin: 0; font-size: 16px;">API Disponobilizada por <a href="https://rastrearpedidos.com.br/" target="_blank">Rastrear Pedidos</a><br>Criado por <a href="http://renanmorais.online" target="_blank">Renan Morais</a></p>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	<script src="./js/app.js"></script>
 </body>
